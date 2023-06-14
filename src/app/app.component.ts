@@ -1,3 +1,6 @@
+import { TransferenciaService } from "./services/TransferenciaService";
+import { Output } from '@angular/core';
+import { CommonModule } from "@angular/common";
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +10,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bytebank';
+
+  constructor(private service: TransferenciaService){
+
+  }
+
+  transferir($event): void{
+    this.service.adicionar($event);
+  }
 }
